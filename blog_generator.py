@@ -4,7 +4,7 @@ from dotenv import dotenv_values
 config = dotenv_values('.env')
 
 client = Groq(
-    api_key=('API_KEY'),
+    api_key=config['API_KEY']
     )
 def generate_blog(paragraph_topic):
     response = client.chat.completions.create(
