@@ -8,14 +8,14 @@ client = Groq(
     )
 def generate_blog(paragraph_topic):
     response = client.chat.completions.create(
-        model = 'llama-3.3-70b-versatile',
+        model = 'meta-llama/llama-4-scout-17b-16e-instruct',
         messages = [
             {
-                'role': 'user', 'content': f'Write a blog post about: {paragraph_topic}'
+                'role': 'user', 'content': f'Write a single-paragraph blog post about: {paragraph_topic}, end it naturally knowing your limit is 120 tokens.'
             }
         ],
-        max_tokens = 100,
-        temperature = 0.3
+        max_tokens = 120,
+        temperature = 1.0,
     )
     
     return response.choices[0].message.content
