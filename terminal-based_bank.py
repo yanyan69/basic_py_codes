@@ -1,4 +1,5 @@
 #terminal bank account
+#application of class, init methods, instance methods, objects etc
 class BankAccount:
   def __init__(self, first_name, last_name, account_id, account_type, pin, balance):
     self.first_name = first_name
